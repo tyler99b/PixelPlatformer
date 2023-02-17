@@ -1,41 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c20b05jef5ka3"]
+[gd_scene load_steps=4 format=3 uid="uid://c20b05jef5ka3"]
 
-[ext_resource type="Texture2D" uid="uid://cf7kd5bv865pe" path="res://characters_packed.png" id="1_mign7"]
 [ext_resource type="Script" path="res://Player.gd" id="1_p6y1n"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1dsso"]
-atlas = ExtResource("1_mign7")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d0l4c"]
-atlas = ExtResource("1_mign7")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l06qh"]
-atlas = ExtResource("1_mign7")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xcgm8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1dsso")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d0l4c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l06qh")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://n7jys11h5pql" path="res://PlayerBlueSkin.tres" id="2_tcia0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2g3d"]
 size = Vector2(12, 19)
@@ -45,8 +11,9 @@ texture_filter = 1
 script = ExtResource("1_p6y1n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_xcgm8")
-animation = &"walk"
+texture_filter = 1
+sprite_frames = ExtResource("2_tcia0")
+animation = &"idle"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
